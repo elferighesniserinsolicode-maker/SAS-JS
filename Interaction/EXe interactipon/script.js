@@ -1,11 +1,16 @@
-let bouton = document.getElementById("btn-start");
-let message = document.getElementById("message");
-
-bouton.addEventListener("click", function () {
-  let nom = prompt("Quel est votre prénom ?");
-  if (nom) {
-    message.innerText = "Bonjour, " + nom + " !";
-  } else {
-    alert("Aucun nom saisi !");
-  }
-});
+let inpt = document.getElementById("txt");
+      let msg = document.createElement("p");
+      let list = document.querySelector("ul");
+      let btn = document.getElementById("btn");
+ btn.addEventListener("click", function () {
+        if (inpt.value.trim()) {
+          let li = document.createElement("li");
+          li.textContent = inpt.value;
+          inpt.value = "";
+          list.appendChild(li);
+        } else {
+          document.body.appendChild(msg);
+          msg.innerText = "Try Writing Somthing";
+        }
+      });
+﻿
